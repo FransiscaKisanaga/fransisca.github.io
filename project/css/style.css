@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #182938;
+}
+
+h1 {
+    font-size: 10vmin;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 5vmin;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+    font-size: 3vmin;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 2vmin;
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+}
+
+a {
+    color: white;
+}
+
+.selected {
+    background-color: #314455;
+}
+
+.mainlogo {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20vw;
+    height: auto;
+    padding-bottom: 0px;
+}
+
+#navlogo {
+    float: left;
+    display: block;
+    width: auto;
+    height: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#error {
+    color: white;
+    font=font-family: "Montserrat", sans-serif;
+}
+
+#error p{
+    border: 2px solid #f00;
+    background-color: #fcc;
+    padding: 10px;
+    display: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+#madman {
+    width: 50vw;
+}
+
+#blood {
+    width: 50vw;
+}
+
+/*Background video*/
+.background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/*Navbar*/
+nav {
+    overflow: hidden;
+    background-color: #182938;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav a:hover {
+    background-color: #314455;
+}
+
+/*Scroll down button*/
+.scroll a {
+    position: absolute;
+    bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    display: inline-block;
+/*    -webkit-transform: translate(0, -50%);*/
+    transform: translate(0, -50%);
+    color: #fff;
+    font: normal 400 20px/1 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: opacity .3s;
+}
+
+#home a {
+    padding-top: 60px;
+}
+
+#home a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: rotate(-45deg);
+    animation: sdb 2s infinite;
+    box-sizing: border-box;
+}
+
+@keyframes sdb {
+    0% {
+        transform: rotate(-45deg) translate(0, 0);
+    }
+
+    20% {
+        transform: rotate(-45deg) translate(-10px, 10px);
+    }
+
+    40% {
+        transform: rotate(-45deg) translate(0, 0);
+    }
+}
+
+/*Exhibition*/
+#microscopicmiracles {
+    background-image: url(../media/images/atom-background.png);
+    background-blend-mode: overlay;
+}
+
+#microscopicmiracles div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#microscopicmiracles a img {
+    width: 20vmin;
+    height: auto;
+    box-shadow: 0 5px 20px #000;
+    margin: 30px;
+    margin-top: 10vh;
+}
+
+#microscopicmiracles img {
+    transition: 0.5s;
+    filter: grayscale(100%) blur(5px) brightness(50%) saturate(100%);
+    overflow: hidden;
+}
+
+#microscopicmiracles:hover img {
+    filter: grayscale(0%) blur(0px) brightness(150%) saturate(200%);
+}
+
+/*Learning*/
+#learning {
+    background-image: url(../media/images/bloodstream-background.jpg);
+    background-blend-mode: darken;
+    background-size: cover;
+}
+
+/*Syringe animation*/
+#prick {
+    width: 29vw;
+    height: auto;
+    position: absolute;
+    overflow: hidden;
+    left: 0vw;
+    top: 35vh;
+}
+
+#syringes-motion {
+    width: 300vw;
+    animation: syringes-motion 1s steps(10) infinite;
+}
+
+@keyframes syringes-motion {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-300vw);
+    }
+}
+
+/*DNA animation*/
+#dna {
+    width: 70vw;
+    height: auto;
+    position: absolute;
+    overflow: hidden;
+    right: -25vw;
+    top: -25vh;
+    z-index: -1;
+}
+
+#dna-motion {
+    width: 700vw;
+    animation: dna-motion 1s steps(10) infinite;
+}
+
+@keyframes dna-motion {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-700vw);
+    }
+}
+
+/*Blood cell animation*/
+.bloodcell {
+    mix-blend-mode: multiply;
+    width: 5vw;
+    height: auto;
+    transform-origin: 50% 50%;
+    position: absolute;
+
+}
+
+#bloodcell1 {
+    animation: leftToRight linear 4s infinite;
+    left: -5vw;
+    top: 100vh;
+}
+
+#bloodcell2 {
+    animation: leftToRight linear 3.5s infinite;
+    left: -5vw;
+    top: 40vh;
+}
+
+#bloodcell3 {
+    animation: leftToRight linear 5s infinite;
+    left: -5vw;
+    top: 58vh;
+}
+
+#bloodcell4 {
+    animation: leftToRight linear 5.5s infinite;
+    left: -5vw;
+    top: 45vh;
+}
+
+#bloodcell5 {
+    animation: leftToRight linear 4.5s infinite;
+    left: -5vw;
+    top: 55vh;
+}
+
+@keyframes leftToRight {
+    0% {
+        transform: translate(-5vw, 50px);
+    }
+
+    7% {
+        transform: translate(7vw, -40px;)
+    }
+
+    15% {
+        transform: translate(15vw, 60px);
+    }
+
+    30% {
+        transform: translate(30vw, -45px);
+    }
+
+    45% {
+        transform: translate(45vw, 57px);
+    }
+
+    70% {
+        transform: translate(70vw, -42px);
+    }
+
+    85% {
+        transform: translate(85vw, 53px);
+    }
+
+    100% {
+        transform: translate(105vw, -48px);
+    }
+}
